@@ -29,9 +29,9 @@ var udpPort = new osc.UDPPort({
 function runCommand(codename) {
     let cmd = data.commands[codename]
     console.log(`Sent ${cmd}`);
-    // udpPort.send({
-    //     address: cmd
-    // })
+    udpPort.send({
+        address: cmd
+    })
 }
 
 app.get("/scs", async (request, response) => {
@@ -93,4 +93,4 @@ const listener = app.listen("80", () => {
       });
 });
 
-// udpPort.open();
+udpPort.open();
