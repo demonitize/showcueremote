@@ -1,0 +1,12 @@
+{
+    "commands":{
+        "go":"/ctrl/go",
+        "stopall":"/ctrl/stopall",
+        "pauseresume":"/ctrl/pauseresumeall",
+        "gotop":"/ctrl/gotop",
+        "goback":"/ctrl/goback",
+        "gonext":"/ctrl/gotonext",
+        "goend":"/ctrl/gotoend",
+        "playcue":"/cue/go"
+    }
+}
