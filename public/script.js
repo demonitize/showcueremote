@@ -1,3 +1,5 @@
+let updateShown = false;
+
 $("body").on("keyup", (d) => {
     switch (d.keyCode) {
         case 32:
@@ -40,10 +42,27 @@ function weHaveSumbitAtHome(cmd = "null") {
 		url: '/scs',
 		data: `command=${cmd}`,
 		success: (d) => {
-            document.getElementById("toastData").innerHTML = `Sent Command ${d}`;
+            document.getElementById("toastData").innerHTML = `Sent Command ${d.command}`;
             const toastBootstrap = bootstrap.Toast.getOrCreateInstance(document.getElementById("toasty"));
             toastBootstrap.show();
+
+        if (updateShown) return;
+            let updateElem = document.getElementById("outdatedPlaceholder");
+            const appendAlert = (message, type) => {
+                const wrapper = document.createElement('div')
+                wrapper.innerHTML = [
+                  `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+                  `   <div>${message}</div>`,
+                  '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+                  '</div>'
+                ].join('')
+                updateElem.append(wrapper)
+              }
+              if (d.outdated) {
+                  appendAlert(`Hey! There is a new version of SCS Remote available, you should probably upgrade...<br>Current version: ${d.curv} <br>New version: ${d.newv} <br>Grab it here: <a href="https://github.com/demonitize/showcueremote">github.com/demonitize/showcueremote</a>`, 'danger')
+              }
+              updateShown = true;
+
 		}
 	})
-
 }
