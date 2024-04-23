@@ -1,6 +1,6 @@
 {
   "name": "show-cue-remote",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "node server.js",
   "engines": {
     "node": "20.x"
@@ -12,6 +12,7 @@
     "type": "github",
     "url": "https://github.com/demonitize/showcueremote/"
   },
+  "homepage": "https://github.com/demonitize/showcueremote/",
   "author": {
     "name": "demonitize",
     "url": "https://github.com/demonitize"
