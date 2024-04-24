@@ -21,17 +21,18 @@ app.get("/", (request, response) => {
 
 
 var udpPort = new osc.UDPPort({
-    localAddress: config.ip,
-    localPort: config.port,
+    localAddress: "192.168.2.2",
+    localPort: "57121",
     metadata: true
 });
+udpPort.open();
 
 function runCommand(codename) {
     let cmd = data.commands[codename]
     console.log(`Sent ${cmd}`);
     udpPort.send({
         address: cmd
-    })
+    }, "192.168.2.2", 58000)
 }
 
 app.get("/scs", async (request, response) => {
@@ -92,5 +93,3 @@ const listener = app.listen("80", () => {
         
       });
 });
-
-udpPort.open();
