@@ -20,19 +20,21 @@ app.get("/", (request, response) => {
 });
 
 
-var udpPort = new osc.UDPPort({
-    localAddress: "192.168.2.2",
+var SCSPort = new osc.UDPPort({
+    localAddress: `${config.SCSip}`,
     localPort: "57121",
     metadata: true
 });
-udpPort.open();
+SCSPort.open();
+
+
 
 function runCommand(codename) {
     let cmd = data.commands[codename]
     console.log(`Sent ${cmd}`);
-    udpPort.send({
+    SCSPort.send({
         address: cmd
-    }, "192.168.2.2", 58000)
+    }, `${config.SCSip}`, `${config.SCSport}`);
 }
 
 app.get("/scs", async (request, response) => {
