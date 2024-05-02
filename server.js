@@ -76,7 +76,14 @@ app.get("/scs", async (request, response) => {
             break;
 	}
     await response.send({outdated: outdated, command: data.commands[req.command], newv, curv});
+});
+
+app.get("/etc", async (request, response) => {
+	let req = request.query
+
 })
+
+
 const listener = app.listen("80", () => {
 	console.log("Your app is listening on port " + listener.address().port);
 
@@ -86,12 +93,16 @@ const listener = app.listen("80", () => {
         newVersionCallback: function(details) {
             outdated = true;
             newv = details.remote.version
-            return console.log("There is a new version of " + details.local.name + " available, you should probably upgrade...\ncurrent version:  " + details.local.version + "\nnew version:      " + details.remote.version + "\ngrab it here:     " + details.remote.homepage);
+            return console.log("There is a new version of " + details.local.name + " available, you should probably upgrade...\nCurrent version:  " + details.local.version + "\nNew version:      " + details.remote.version + "\nGrab it here:     " + details.remote.homepage);
         },
         sameVersionCallback: function(details) {
             outdated = false;
             return console.log("You are up to date!")
-        }
+        },
+        oldVersionCallback: function(details) {
+            outdated = false;
+            return console.log("You are... somehow newer than the latest version... Maybe you should update the GitHub repo");
+        },
         
       });
 });

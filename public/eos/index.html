@@ -1,0 +1,100 @@
+<html>
+
+<head>
+    <title>ETC Element 2</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"
+        defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" defer></script>
+    <link href="/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+
+    <script src="/bootstrap.bundle.min.js" crossorigin="anonymous" defer></script>
+    <script src="/jquery.min.js" defer></script>
+    <script src="/eos/script.js" defer></script>
+</head>
+
+<body data-bs-theme="dark">
+    <div class="position-relative">
+        <header class="container text-center">
+            <h1 class="display-1">ETC Element 2</h1>
+        </header>
+        <div class="toast-container top-0 start-0 ps-4 pt-4" id="toasts">
+            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="toasty" data-bs-delay="5000">
+                <div class="toast-header text-bg-primary">
+                    <strong class="me-auto">Show Cue Systems</strong>
+                    <small>Just Now</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body" id="toastData">Sent Command</div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <main class="container">
+        <div id="outdatedPlaceholder"></div>
+
+        <form action="/etc" method="get" id="rpcStatus" data-bs-theme="dark">
+            <header class="container text-center">
+                <h5 class="display-5">Channel Controls</h5>
+            </header>
+            <br />
+            <!-- BEGIN CHANNEL CONTROL -->
+            <div class="row row-cols-lg-auto g-3 align-items-center col-12">
+                <div class="col-4">
+                    <label class="visually-hidden" for="chnlNum">Channel Number</label>
+                    <div class="input-group">
+                        <div class="input-group-text">Channel: </div>
+                        <input type="number" min="0" max="32767" class="form-control" id="chnlNum" placeholder="420">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <label class="visually-hidden" for="chnlBright">Brightness</label>
+                    <div class="input-group">
+                        <div class="input-group-text">Brightness: </div>
+                        <input type="number" min="0" max="100" class="form-control" id="chnlBright" placeholder="69">
+                        <div class="input-group-text">%</div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <input type="button" class="btn btn-primary submit btn-lg" id="chnlGo" value="Go!">
+                </div>
+            </div>
+            <br />
+            <hr>
+            <!-- BEGIN CUE CONTROL -->
+            <br />
+            <header class="container text-center">
+                <h5 class="display-5">Cue Controls</h5>
+            </header>
+            <div class="row row-cols-lg-auto g-3 align-items-center col-12">
+                <div class="col-4">
+                    <label class="visually-hidden" for="cueNum">Cue Number</label>
+                    <div class="input-group">
+                        <div class="input-group-text">Cue: </div>
+                        <input type="number" min="0" max="32767" class="form-control" id="cueNum" placeholder="420">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <input type="button" class="btn btn-primary submit btn-lg" id="cueGo" value="Go!">
+                </div>
+            </div>
+            <br />
+            <hr>
+            <br />
+            <br />
+            <div class="btn-group grid col-12 mx-auto" role="group" aria-label="Button Shit 3">
+                <input type="button" id="gotop" value="Go To Top" class="btn btn-secondary submit btn-lg" />
+                <input type="button" id="goback" value="Go Back" class="btn btn-primary submit btn-lg" />
+                <input type="button" id="gonext" value="Go To Next" class="btn btn-secondary submit btn-lg" />
+                <input type="button" id="goend" value="Go To End" class="btn btn-primary submit btn-lg" />
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>
