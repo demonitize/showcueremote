@@ -14,6 +14,11 @@
     <script src="/bootstrap.bundle.min.js" crossorigin="anonymous" defer></script>
     <script src="/jquery.min.js" defer></script>
     <script src="/script.js" defer></script>
+    <style>
+        * {
+            --btn-font-size: 1.75rem;
+        }
+    </style>
 </head>
 
 <body data-bs-theme="dark">
@@ -43,25 +48,25 @@
         <form action="/scs" method="get" id="rpcStatus" data-bs-theme="dark">
             <br />
             <div class="btn-group grid col-12 mx-auto" role="group" aria-label="Button Shit">
-                <input type="button" id="go" value="Go" class="btn btn-success submit btn-lg " />
-                <input type="button" id="stopall" value="Stop All Cues" class="btn btn-danger submit btn-lg " />
+                <input type="button" id="go" value="Go" class="btn btn-success submit" style="--bs-btn-padding-y: 1.5rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: var(--btn-font-size);" />
+                <input type="button" id="stopall" value="Stop All Cues" class="btn btn-danger submit" style="--bs-btn-padding-y: 1.5rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: var(--btn-font-size);" />
             </div>
             <br />
             <br />
             <br />
             <br />
             <div class="btn-group grid col-12 mx-auto" role="group" aria-label="Button Shit 2">
-                <input type="button" id="pauseresume" value="Pause/Resume All" class="btn btn-primary submit btn-lg " />
+                <input type="button" id="pauseresume" value="Pause/Resume All" class="btn btn-primary submit" style="--bs-btn-padding-y: 1.5rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: var(--btn-font-size);" />
             </div>
             <br />
             <br />
             <br />
             <br />
             <div class="btn-group grid col-12 mx-auto" role="group" aria-label="Button Shit 3">
-                <input type="button" id="gotop" value="Go To Top" class="btn btn-secondary submit btn-lg " />
-                <input type="button" id="goback" value="Go Back" class="btn btn-primary submit btn-lg " />
-                <input type="button" id="gonext" value="Go To Next" class="btn btn-secondary submit btn-lg " />
-                <input type="button" id="goend" value="Go To End" class="btn btn-primary submit btn-lg " />
+                <input type="button" id="gotop" value="Go To Top" class="btn btn-secondary submit" style="--bs-btn-padding-y: 1.5rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: var(--btn-font-size);" />
+                <input type="button" id="goback" value="Go Back" class="btn btn-primary submit" style="--bs-btn-padding-y: 1.5rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: var(--btn-font-size);" />
+                <input type="button" id="gonext" value="Go To Next" class="btn btn-secondary submit" style="--bs-btn-padding-y: 1.5rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: var(--btn-font-size);" />
+                <input type="button" id="goend" value="Go To End" class="btn btn-primary submit" style="--bs-btn-padding-y: 1.5rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: var(--btn-font-size);" />
             </div>
         </form>
     </main>
